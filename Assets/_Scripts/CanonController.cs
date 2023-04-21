@@ -11,16 +11,14 @@ public class CanonController : MonoBehaviour
     float lastShotTimestamp = 0;
     public Transform bulletSpawnPos;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] bool active = true;
 
     // Update is called once per frame
     void Update()
     {
-        Shoot();
+        if (active) {
+            Shoot();
+        }
     }
 
     void Shoot() {
@@ -32,5 +30,8 @@ public class CanonController : MonoBehaviour
         }
     }
 
+    public void SetActivationStateCanon(bool state) {
+        active = state;
+    }
 
 }

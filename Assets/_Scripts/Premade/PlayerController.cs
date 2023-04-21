@@ -31,8 +31,10 @@ namespace Premade {
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            print("hit");
+            if (other.CompareTag("Enemy")) {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+            
         }
     }
 }
